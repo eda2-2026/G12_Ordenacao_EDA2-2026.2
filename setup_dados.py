@@ -1,6 +1,7 @@
 import os
 import csv
 import urllib.request
+import urllib.error
 import gdown
 
 def gerar_tabela_cursos():
@@ -47,6 +48,13 @@ def baixar_candidatos_drive():
         print(f"O arquivo {output} já existe. Pulando download.")
         return
 
+
+    print("Verificando conexão com a internet...")
+    try:
+        urllib.request.urlopen('https://www.google.com', timeout=3)
+    except urllib.error.URLError:
+        print("Erro: Sem conexão com a internet. Verifique sua rede para baixar os dados do ENEM.")
+        return
     print("Iniciando o download da base de dados do Google Drive (Isso pode levar alguns instantes)...")
     try:
         gdown.download(url, output, quiet=False)
@@ -55,6 +63,8 @@ def baixar_candidatos_drive():
         print("Erro: A biblioteca 'gdown' não está instalada.")
         print("Abra o terminal e digite: pip install gdown")
         print("Depois tente rodar o script novamente.")
+    except Exception as e:
+        print(f"Ocorreu um erro inesperado durante o download: {e}")
 
 if __name__ == "__main__":
     print("--- INICIANDO SETUP DO AMBIENTE ---")
