@@ -1,4 +1,6 @@
 *.csv
 *.out
 *.o
+*.a
+*.so
 *.exe

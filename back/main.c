@@ -14,6 +14,8 @@ typedef struct {
 
 typedef struct {
     long long inscricao; 
+    char nome[100];
+    int id_curso_pretendido;
     float nota_cn;
     float nota_ch;
     float nota_lc;
