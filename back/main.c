@@ -24,6 +24,22 @@ typedef struct {
     float nota_final;
 } Candidato;
 
+void calcular_nota_ponderada(Candidato *candidato, const Curso *curso) {
+    float soma_pesos = curso->peso_cn + curso->peso_ch + curso->peso_lc + curso->peso_mt + curso->peso_red;
+    
+    if (soma_pesos == 0) {
+        candidato->nota_final = 0.0f;
+        return;
+    }
+    float soma_ponderada = (candidato->nota_cn * curso->peso_cn) +
+                           (candidato->nota_ch * curso->peso_ch) +
+                           (candidato->nota_lc * curso->peso_lc) +
+                           (candidato->nota_mt * curso->peso_mt) +
+                           (candidato->nota_red * curso->peso_red);
+    candidato->nota_final = soma_ponderada / soma_pesos;
+}
+
+
 int main() {
     printf("--- Sistema Simulador do SISU ---\n");
     return 0; // a ser preenchida 
