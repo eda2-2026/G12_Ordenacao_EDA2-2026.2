@@ -31,7 +31,6 @@ static void counting_sort_digito(Candidato *arr, int n, int exp) {
         count[9 - digito]++;
     }
 
-    
     for (int i = 1; i < 10; i++) {
         count[i] += count[i - 1];
     }
