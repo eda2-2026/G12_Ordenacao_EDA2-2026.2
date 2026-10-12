@@ -250,7 +250,6 @@ class SeletorCursoModal(ctk.CTkFrame):
         entry_busca.bind("<KeyRelease>", lambda e: preencher_lista([v for v in self.values if entry_busca.get().lower() in v.lower()]))
         dialog.bind("<Escape>", lambda e: dialog.destroy())
 
-
 class SisuApp(ctk.CTk):
     def __init__(self):
         super().__init__()
