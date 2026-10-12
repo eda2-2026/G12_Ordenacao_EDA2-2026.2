@@ -8,6 +8,9 @@ A arquitetura do sistema é dividida em duas partes principais:
 - **Python**: Utilizado para a preparação e download automatizado dos dados de candidatos e geração dos cursos (`setup_dados.py`).
 - **C**: Utilizado para o núcleo do sistema, implementando os algoritmos de ordenação de forma eficiente para processar a grande quantidade de candidatos.
 
+## 📹 Apresentação
+* **Assista ao Vídeo:** [Apresentação da dupla](https://www.youtube.com/watch?v=R5o7hZw-pRM)
+
 ## Equipe
 *   [Gabriel Diniz](https://github.com/GabrielDiniz12) - 241025630
 *   [Pedro Americo](https://github.com/dev-americo) - 241025980
@@ -30,4 +33,13 @@ Execute os comandos abaixo no terminal, a partir da pasta raiz do projeto. É ne
 4. Inicie a interface:
    ```bash
    python front/interface.py
+   ```
+
+## Como rodar os testes
+
+Execute os comandos a partir da pasta raiz do projeto, com Python, `gcc` e as dependências da interface instaladas.
+
+- Para rodar a suíte completa, incluindo a tentativa de análise com Valgrind:
+   ```bash
+   python test/testes.py
    ```
