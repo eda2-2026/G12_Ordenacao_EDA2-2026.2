@@ -16,6 +16,7 @@ A arquitetura do sistema é dividida em duas partes principais:
 1. Instale as dependências do Python necessárias para baixar a base de dados:
    ```bash
    pip install gdown
+   pip install customtkinter
    ```
 2. Execute o script de configuração inicial (requer internet):
    ```bash
